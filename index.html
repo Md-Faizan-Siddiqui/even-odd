@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Roll No</h1>
+    <form action="#" onsubmit="uData()">
+        <input type="number" placeholder="Enter Roll No" id="rolno">
+        <button>Add</button>
+    </form>
+    <br>
+    <button onclick="arrange()">Arrange</button>
+    <p id="result"></p>
+
+    <h1>Even</h1>
+    <p id="even"></p>
+
+    <h1>Odd</h1>
+    <p id="odd"></p>
+    
+    <script>
+        let arr = []
+        let even = []
+        let odd = []
+
+
+        function uData() { 
+            let p = document.getElementById("rolno").value;
+            arr.push([p])
+            document.getElementById("rolno").value = "";
+            document.getElementById("result").innerHTML = arr;
+        }
+        function arrange(){
+            for(var i=0 ; i <arr.length; i++) {
+                if (arr[i] % 2 === 0 ){
+                    even.push(arr[i])
+                    document.getElementById("even").innerHTML=even;
+                }else{ 
+                    
+                    odd.push(arr[i])
+                    document.getElementById("odd").innerHTML=odd;
+                }
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
